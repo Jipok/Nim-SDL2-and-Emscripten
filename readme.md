@@ -132,7 +132,7 @@ Some tips and scripts you can find here: [link](https://github.com/kripken/emscr
 
 
 ## Why you shouldn't use SDL2 with Emscripten?
-Because it has a large size and terrible architecture(port, not sdl).
+Because it has a large size(3 mb) and terrible architecture(port, not sdl).
 
 At first I thought about dynamic linking. But this is an experimental feature([article](https://github.com/kripken/emscripten/wiki/Linking)) and I was not able to use SDL2 as side module.
 
@@ -144,4 +144,4 @@ The correct way would be to use ready-made browser functions for working with im
 
 And a quick review of the code, shows that this is used everywhere. It's horrible. My perfectionism did not allow me to continue to use this option for cross-platform applications.
 
-You can use sdl1. For emscripten there is a simple library that uses the correct method. Just take a look at her code. Just take a look at her code: [library_sdl.js](https://github.com/kripken/emscripten/blob/1.37.18/src/library_sdl.js)
+You can use sdl1. For emscripten there is a simple library that uses the correct method. Just take a look at her code: [library_sdl.js](https://github.com/kripken/emscripten/blob/1.37.18/src/library_sdl.js)
