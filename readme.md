@@ -77,6 +77,15 @@ The module gfxPrimitives is not included in sdl2. Also it does not exist in othe
 
 ```passL %= "./libSDL2_gfx.o"```
 
+## How to open external files?
+Use *preload-file*. Then put the files in the *assets* directory. After compilation, all the files will be assembled into one, but accessible by the same path.
+
+For example:
+
+add to config file ```passL %= "--preload-file assets"```
+
+to your code ```image1.load(app.renderer, "assets/img1.png")```
+
 ## [Ports](https://kripken.github.io/emscripten-site/docs/compiling/Building-Projects.html#emscripten-ports)
 All available ports are located here: https://github.com/emscripten-ports
 
