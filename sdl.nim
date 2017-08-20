@@ -1,12 +1,5 @@
 import sdl2/sdl
 
-#Таймеры: из-за многопоточности
-#framerate тоже из-за многопточности?
-#mixer: не воспроизводит ничего кроме wav
-#mixer: setDistance не работает?
-#ex105_syswm.nim не работает. getWindowWMInfo не определена
-#Код после mainLoop в emscripten не исполняется. но можно руками выходить из цикла
-
 when defined(emscripten):
   import jsbind/emscripten
 
