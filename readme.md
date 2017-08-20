@@ -1,5 +1,7 @@
 I spent some time studying the work of SDL2 with Emscripten. Although in the end it turned out to be a bad idea(look at the end), I decided to post information that could help me in my time. 
 
+**Warn**:I'm very bad in English. Most of the text is translated by Google, do not be surprised.
+
 ## How to make working SDL2 app for web?
 All you need:
 1) nimble install sl2_nim jsbind
@@ -41,22 +43,22 @@ I took examples from Vladar 4/sdl2_net. Not everything was made working.
 - [x] ex102_logs - same as the previous one
 - [ ] ex104_timers - it seems the timer is triggered once. Perhaps this is because of the single-threadedness of js
 - [ ] ex105_syswm - getWindowWMInfo are not defined. But this can easily be fixed
-- [x] [ex201_textures](https://jipok.github.io/Nim-SDL2-and-Emscripten/ex201_textures/) - works. But look below how to use external files and sdl2-image
-- [x] [ex202_transformations](https://jipok.github.io/Nim-SDL2-and-Emscripten/ex202_transformations/)
-- [x] [ex203_blending](https://jipok.github.io/Nim-SDL2-and-Emscripten/ex203_blending/)
-- [x] [ex204_drawing](https://jipok.github.io/Nim-SDL2-and-Emscripten/ex204_drawing/)
-- [x] [ex205_sdl_gfx_primitives](https://jipok.github.io/Nim-SDL2-and-Emscripten/ex205_sdl_gfx_primitives/) - for better performance, I moved the code of the drawing from the main loop. Also look below about gfx primitives
-- [x] [ex206_bitmap_fonts](https://jipok.github.io/Nim-SDL2-and-Emscripten/ex206_bitmap_fonts/) - works. But look below how to use sdl2_ttf
-- [x] [ex207_ttf_fonts](https://jipok.github.io/Nim-SDL2-and-Emscripten/ex207_ttf_fonts/) 
-- [x] [ex208_framerate](https://jipok.github.io/Nim-SDL2-and-Emscripten/ex208_framerate/) 
-- [x] [ex209_viewports_and_scaling](https://jipok.github.io/Nim-SDL2-and-Emscripten/ex209_viewports_and_scaling/) 
-- [x] [ex210_pixels](https://jipok.github.io/Nim-SDL2-and-Emscripten/ex210_pixels/) 
+- [x] [ex201_textures](https://jipok.github.io/Nim-SDL2-and-Emscripten/ex201_textures/index.html) - works. But look below how to use external files and sdl2-image
+- [x] [ex202_transformations](https://jipok.github.io/Nim-SDL2-and-Emscripten/ex202_transformations/index.html)
+- [x] [ex203_blending](https://jipok.github.io/Nim-SDL2-and-Emscripten/ex203_blending/index.html)
+- [x] [ex204_drawing](https://jipok.github.io/Nim-SDL2-and-Emscripten/ex204_drawing/index.html)
+- [x] [ex205_sdl_gfx_primitives](https://jipok.github.io/Nim-SDL2-and-Emscripten/ex205_sdl_gfx_primitives/index.html) - for better performance, I moved the code of the drawing from the main loop. Also look below about gfx primitives
+- [x] [ex206_bitmap_fonts](https://jipok.github.io/Nim-SDL2-and-Emscripten/ex206_bitmap_fonts/index.html) - works. But look below how to use sdl2_ttf
+- [x] [ex207_ttf_fonts](https://jipok.github.io/Nim-SDL2-and-Emscripten/ex207_ttf_fonts/index.html) 
+- [x] [ex208_framerate](https://jipok.github.io/Nim-SDL2-and-Emscripten/ex208_framerate/index.html) 
+- [x] [ex209_viewports_and_scaling](https://jipok.github.io/Nim-SDL2-and-Emscripten/ex209_viewports_and_scaling/index.html) 
+- [x] [ex210_pixels](https://jipok.github.io/Nim-SDL2-and-Emscripten/ex210_pixels/index.html) 
 - [ ] ex211_opengl - Emscripten does not support OpenGL. Only OpenGL ES and WebGL
-- [x] [ex301_keyboard](https://jipok.github.io/Nim-SDL2-and-Emscripten/ex301_keyboard/) 
-- [x] [ex302_mouse](https://jipok.github.io/Nim-SDL2-and-Emscripten/ex302_mouse/)
+- [x] [ex301_keyboard](https://jipok.github.io/Nim-SDL2-and-Emscripten/ex301_keyboard/index.html) 
+- [x] [ex302_mouse](https://jipok.github.io/Nim-SDL2-and-Emscripten/ex302_mouse/index.html)
 - [ ] ex303_joystick - I don't have a joystick to test this, but looks working
-- [x] [ex401_mixer](https://jipok.github.io/Nim-SDL2-and-Emscripten/ex401_mixer/)  - no music.  See below about sdl-mixer
-- [x] [ex402_panning](https://jipok.github.io/Nim-SDL2-and-Emscripten/ex402_panning/) - works, but without SetDistance
+- [x] [ex401_mixer](https://jipok.github.io/Nim-SDL2-and-Emscripten/ex401_mixer/index.html)  - no music.  See below about sdl-mixer
+- [x] [ex402_panning](https://jipok.github.io/Nim-SDL2-and-Emscripten/ex402_panning/index.html) - works, but without SetDistance
 
 ## Other examples? SDL-net?
 I was not interested in sdl-net. But below you can find information about it. See "Ports"
@@ -66,7 +68,7 @@ Although WebAssembly(wasm) is more efficient, but not supported by many browsers
 
 **ex:** ```nim c -d:emscripten -d:release -d:wasm ex208_framerate.nim```
 
-Live demo: [wasm_ex208_framerate](https://jipok.github.io/Nim-SDL2-and-Emscripten/wasm_ex208_framerate/) 
+Live demo: [wasm_ex208_framerate](https://jipok.github.io/Nim-SDL2-and-Emscripten/wasm_ex208_framerate/index.html) 
 
 If you're interested, the forum has a post with the benchmarks: [Nim in the browser: some benchmarks](https://forum.nim-lang.org/t/2991)
 
