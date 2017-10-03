@@ -18,7 +18,7 @@ to
 
 ```sdl.mainLoop done:```
 
-6) ```nim c -d:emscripten -d:release main.nim```
+6) ```nim c -d:asmjs -d:release main.nim```
 
 That's all. (Your code still has be compilable for the native)
 
@@ -38,7 +38,7 @@ template mainLoop*(statement, actions: untyped): untyped =
 
 
 ## Any live demo?
-I took examples from Vladar 4/sdl2_net. Not everything was made working.
+I took examples from Vladar4/sdl2_nim. Not everything was made working.
 - [x] ex101_init - everything is working. Nothing interesting to see there
 - [x] ex102_logs - same as the previous one
 - [ ] ex104_timers - it seems the timer is triggered once. Perhaps this is because of the single-threadedness of js
@@ -60,20 +60,24 @@ I took examples from Vladar 4/sdl2_net. Not everything was made working.
 - [x] [ex401_mixer](https://jipok.github.io/Nim-SDL2-and-Emscripten/ex401_mixer/index.html)  - no music.  See below about sdl-mixer
 - [x] [ex402_panning](https://jipok.github.io/Nim-SDL2-and-Emscripten/ex402_panning/index.html) - works, but without SetDistance
 
-## Other examples? SDL-net?
+Simply run ```nim e build.nims``` to build all examples. 
+
+If you experience problems with local launching of examples on the chromium-based browser, then start your browser with the *allow-file-access-from-files* key. Ex: `chromium --allow-file-access-from-files `
+
+### Other examples? SDL-net?
 I was not interested in sdl-net. But below you can find information about it. See "Ports"
 
 ## What about WebAssembly?
 Although WebAssembly(wasm) is more efficient, but not supported by many browsers. Therefore by default (see nim.cfg) it compiles into asmjs. Just add -d:wasm to compiler for wasm.
 
-**ex:** ```nim c -d:emscripten -d:release -d:wasm ex208_framerate.nim```
+**ex:** ```nim c -d:release -d:wasm ex208_framerate.nim```
 
 Live demo: [wasm_ex208_framerate](https://jipok.github.io/Nim-SDL2-and-Emscripten/wasm_ex208_framerate/index.html) 
 
 If you're interested, the forum has a post with the benchmarks: [Nim in the browser: some benchmarks](https://forum.nim-lang.org/t/2991)
 
 ### ex205_sdl_gfx_primitives
-The module gfxPrimitives is not included in sdl2. Also it does not exist in other ports. I had to compile it myself. Just download the libSDL2_gfx.o and add the linker option:
+The module gfxPrimitives is not included in sdl2. Also it does not exist in other ports. I had to compile it myself. Just download the libSDL2_gfx.o and add the linker option(Already there in a nim.cfg):
 
 ```passL %= "./libSDL2_gfx.o"```
 
